@@ -68,6 +68,7 @@ function App() {
 					</Container>
 				</Navbar>
 				<Routes>
+					<Route exact path={"/"} element={<HomePage user={user} />} />
 					<Route exact path={"/home"} element={<HomePage user={user} />} />
 					<Route exact path={"/profile"} element={<Profile user={user} />} />
 					<Route exact path={"/messages"} element={<Messages user={user} />} />
