@@ -1,5 +1,4 @@
 # TEAM404
-
 --------
 
 ## Project: Premade Play
@@ -15,11 +14,9 @@ Profile, Friends, Messages
 ### UI Routes / Pages:
 
 HomePage, Personal Profile, Public User Profile, Messages
-
 --------
 
 ## ITERATION 1:
-
 --------
 
 **Working Heroku deployment: ** https://premade-play.herokuapp.com/
