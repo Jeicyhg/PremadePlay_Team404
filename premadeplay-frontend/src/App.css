@@ -45,3 +45,33 @@
 	background-color: #ffffff;
 	border-color: #172d44;
 }
+
+.premadePlayLogo {
+	filter: drop-shadow(2px 2px 2px rgb(94, 94, 94));
+	-webkit-filter: drop-shadow(2px 2px 2px rgb(94, 94, 94));
+	height: 80px;
+	padding-left: 0px;
+	padding-right: 5px;
+}
+
+.navbar-brand.brand {
+	color: white;
+}
+
+.navbar-nav.nav-link.link {
+	color: white !important;
+	margin-left: 15px !important;
+}
+
+.navItem {
+	color: white !important;
+}
+
+.nav-link {
+	text-align: left;
+}
+
+.logoutButton {
+	margin-top: 15px;
+	margin-bottom: 15px;
+}

@@ -18,7 +18,10 @@ function Logout({ setUser }) {
 
 	return (
 		<div>
-			<Button className="btn btn-secondary" onClick={alternative_logout}>
+			<Button
+				className="logoutButton btn-secondary"
+				onClick={alternative_logout}
+			>
 				<img
 					src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg"
 					alt="Google Logo"

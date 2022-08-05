@@ -17,6 +17,7 @@ const ourClientId = process.env.REACT_APP_GOOGLE_CLIENT_ID;
 
 function App() {
 	const [user, setUser] = useState(null);
+	const [userProfileComplete, setUserProfileComplete] = useState(false);
 
 	useEffect(() => {
 		let loginData = JSON.parse(localStorage.getItem("login"));
@@ -33,6 +34,14 @@ function App() {
 		}
 	}, []);
 
+	useEffect(() => {
+		let fetchedUserData = null;
+		// TODO: get logged in user data from backend
+		if (!(fetchedUserData === undefined || fetchedUserData === null)) {
+			setUserProfileComplete(true);
+		}
+	}, []);
+
 	return (
 		<GoogleOAuthProvider clientId={ourClientId}>
 			<div className="App">
@@ -40,11 +49,10 @@ function App() {
 					<Container className="container-fluid">
 						<Navbar.Brand className="brand" href="/">
 							<img
-								src="/images/premadePlay-logo.png"
+								src="/images/PremadePlay.png"
 								alt="logo"
 								className="premadePlayLogo"
 							/>
-							Premade Play
 						</Navbar.Brand>
 						<Navbar.Toggle aria-controls="basic-navbar-nav" />
 						<Navbar.Collapse id="responsive-navbar-nav">
@@ -68,8 +76,16 @@ function App() {
 					</Container>
 				</Navbar>
 				<Routes>
-					<Route exact path={"/"} element={<HomePage user={user} />} />
-					<Route exact path={"/home"} element={<HomePage user={user} />} />
+					<Route
+						exact
+						path={"/"}
+						element={<HomePage user={user} setUser={setUser} />}
+					/>
+					<Route
+						exact
+						path={"/home"}
+						element={<HomePage user={user} setUser={setUser} />}
+					/>
 					<Route exact path={"/profile"} element={<Profile user={user} />} />
 					<Route exact path={"/messages"} element={<Messages user={user} />} />
 				</Routes>
