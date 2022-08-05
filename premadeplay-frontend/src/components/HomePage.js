@@ -19,8 +19,10 @@ const HomePage = ({ user, setUser }) => {
 						</div>
 					) : (
 						<div>
-							<Login setUser={setUser} />
 							<h1>Log in and start searching for your new teammates! </h1>
+							<br />
+
+							<Login setUser={setUser} />
 						</div>
 					)}
 				</div>
