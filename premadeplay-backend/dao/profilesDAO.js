@@ -46,6 +46,7 @@ export default class ProfilesDAO {
                 language: user.language,
                 date: date,
             }
+            console.log(newReviewDoc);
             const change = await profiles.updateOne({user_id: user._id}, {$set: newReviewDoc});
             if(change.modifiedCount === 0) {
                 throw new Error('Nothing change');

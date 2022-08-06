@@ -28,6 +28,7 @@ export default class PlayersDAO {
         let queryRole = {};
         let queryServer = {};
         let queryLanguage = {};
+        console.log(filters);
         if(filters) {
             if("title" in filters) {
                 queryText = { $text: { $search:filters['title']}};                

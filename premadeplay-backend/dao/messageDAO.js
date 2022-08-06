@@ -57,8 +57,6 @@ export default class MessageDAO {
                 text: userInfo.text,
                 date: date,
             }
-            console.log(messageDoc);
-            console.log(messages);
             return await messages.insertOne(messageDoc);
         }
         catch(e) {
