@@ -17,7 +17,7 @@ HomePage, Personal Profile, Public User Profile, Messages
 
 ## ITERATION 1:
 
-_Working Heroku deployment: _ https://premade-play.herokuapp.com/
+ __Working Heroku deployment:  __ https://premade-play.herokuapp.com/
 
 #### Shared Contributions:
 
