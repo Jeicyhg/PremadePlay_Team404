@@ -28,6 +28,8 @@ HomePage, Personal Profile, Public User Profile, Messages
 
 * Setup github repo
 * Started implementing backend
+* Starter code for get player data and message date from MangoDB
+* Developed mutifilter function at backend.
 
 **Jeicy Contribution: ** Frontend:
 
@@ -53,3 +55,36 @@ HomePage, Personal Profile, Public User Profile, Messages
 #### Initial empty messages:
 
 <img src="./screenshots/iter1-messages.png" width="85%" height="85%" />
+
+
+### Backend Date Retrieve:
+
+#### Get player date:
+
+<img src="./screenshots/iter1-get_plater_data.png" width="85%" height="85%" />
+
+#### Get palyer by id:
+
+<img src="./screenshots/iter1-get_profile_by_id.png" width="85%" height="85%" />
+
+#### Get all the rank we have in data:
+
+<img src="./screenshots/iter1-get_rank.png" width="85%" height="85%" />
+
+#### Get all the role we have in data:
+
+<img src="./screenshots/iter1-get_role.png" width="85%" height="85%" />
+
+#### Get all the server we have in data:
+
+<img src="./screenshots/iter1-get_server.png" width="85%" height="85%" />
+
+#### Get all the language we have in data:
+
+<img src="./screenshots/iter1-get_language.png" width="85%" height="85%" />
+
+#### Get message date:
+
+<img src="./screenshots/iter1-get_message_data.png" width="85%" height="85%" />
+
+
