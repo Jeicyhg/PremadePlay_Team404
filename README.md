@@ -61,7 +61,7 @@ HomePage, Personal Profile, Public User Profile, Messages
 
 #### Get player date:
 
-<img src="./screenshots/iter1-get_plater_data.png" width="85%" height="85%" />
+<img src="./screenshots/iter1-get_player_data.png" width="85%" height="85%" />
 
 #### Get palyer by id:
 
