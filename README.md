@@ -83,7 +83,7 @@ HomePage, Personal Profile, Public User Profile, Messages
 
 <img src="./screenshots/iter1-get_language.png" width="85%" height="85%" />
 
-#### Get message date:
+#### Get message data:
 
 <img src="./screenshots/iter1-get_message_data.png" width="85%" height="85%" />
 
