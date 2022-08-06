@@ -17,26 +17,32 @@ HomePage, Personal Profile, Public User Profile, Messages
 
 ## ITERATION 1:
 
-**Working Heroku deployment: ** https://premade-play.herokuapp.com/
+_Working Heroku deployment: _ https://premade-play.herokuapp.com/
 
-**Shared Contributions: **
+#### Shared Contributions:
 
 * Designed the database and shape of data
 * Created a workplan and divided tasks
 
-**Brian Contribution: ** Backend:
+#### Brian Contribution: Backend:
 
 * Setup github repo
 * Started implementing backend
 * Starter code for get player data and message date from MangoDB
 * Developed mutifilter function at backend.
 
-**Jeicy Contribution: ** Frontend:
+#### Jeicy Contribution: Frontend:
 
 * Shaped github folder structure
 * Started implementing frontend
 * Starter code for login and logged out, webapp functions, and pages
 * Deployed the frontend to heroku
+
+#### Challenges:
+
+* Getting backend and frontend to run and build on each other's devices
+* Putting the backend in communication with the front end
+* Further refining and combining code
 
 ### Frontend Homepage:
 
