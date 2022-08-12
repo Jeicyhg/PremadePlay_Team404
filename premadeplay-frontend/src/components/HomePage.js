@@ -1,5 +1,6 @@
 import "./HomePage.css";
 import Login from "./Login";
+import PlayerList from "./PlayerList";
 
 import React, { useState, useEffect, useCallback } from "react";
 import Container from "react-bootstrap/Container";
@@ -16,6 +17,7 @@ const HomePage = ({ user, setUser }) => {
 								Welcome <strong>{user.googleId}</strong>. <br /> Search below
 								for a new teammate
 							</p>
+							<PlayerList />
 						</div>
 					) : (
 						<div>
@@ -23,6 +25,7 @@ const HomePage = ({ user, setUser }) => {
 							<br />
 
 							<Login setUser={setUser} />
+							<PlayerList />
 						</div>
 					)}
 				</div>

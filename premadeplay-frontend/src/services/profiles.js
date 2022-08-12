@@ -4,9 +4,18 @@ class ProfilesDataService {
 	getAll(page = 0) {
 		return axios.get(`${process.env.REACT_APP_API_BASE_URL}/?page=${page}`);
 	}
-	getProfile(id) {
-		return axios.get(`${process.env.REACT_APP_API_BASE_URL}/api/v1/players/id/${id}`);
-    }
+
+	find(query) {
+		return axios.get(`${process.env.REACT_APP_API_BASE_URL}`, {
+			params: { query },
+		});
+	}
+
+	getProfile(userId) {
+		return axios.get(
+			`${process.env.REACT_APP_API_BASE_URL}/profiles/id/${userId}`
+		);
+	}
 
 	setNewProfile(data) {
 		return axios.put(`${process.env.REACT_APP_API_BASE_URL}/profiles`, data);
@@ -23,19 +32,19 @@ class ProfilesDataService {
 		);
 	}
 
-	getRank() {
+	getRanks() {
 		return axios.get(`${process.env.REACT_APP_API_BASE_URL}/rank`);
 	}
 
-	getRole() {
+	getRoles() {
 		return axios.get(`${process.env.REACT_APP_API_BASE_URL}/role`);
 	}
 
-	getServer() {
+	getServers() {
 		return axios.get(`${process.env.REACT_APP_API_BASE_URL}/server`);
 	}
 
-	getLanguage() {
+	getLanguages() {
 		return axios.get(`${process.env.REACT_APP_API_BASE_URL}/language`);
 	}
 }
