@@ -21,8 +21,11 @@ export default class ProfilesDAO {
             const reviewDoc = {
                 name: user.name,
                 user_id: user._id,
-                rank: user.rank,
-                role: user.role,
+                solo_rank: user.solo_rank,
+                flex_rank: user.flex_rank,
+                tft_rank: user.tft_rank,
+                primary_role: user.primary_role,
+                secondary_role: user.secondary_role,
                 server: user.server,
                 language: user.language,
                 date: date,
@@ -40,8 +43,11 @@ export default class ProfilesDAO {
             const newReviewDoc = {
                 name: user.name,
                 user_id: user._id,
-                rank: user.rank,
-                role: user.role,
+                solo_rank: user.solo_rank,
+                flex_rank: user.flex_rank,
+                tft_rank: user.tft_rank,
+                primary_role: user.primary_role,
+                secondary_role: user.secondary_role,
                 server: user.server,
                 language: user.language,
                 date: date,
@@ -59,7 +65,7 @@ export default class ProfilesDAO {
         }
     }
 
-    static async deleteReview(userId) {
+    static async deleteProfile(userId) {
         try {
             return await profiles.deleteOne({user_id: userId});
         } catch(e) {

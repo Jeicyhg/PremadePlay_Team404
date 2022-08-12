@@ -86,7 +86,7 @@ function App() {
 						path={"/home"}
 						element={<HomePage user={user} setUser={setUser} />}
 					/>
-					<Route exact path={"/profile"} element={<Profile user={user} />} />
+					<Route exact path={"/profile/:id/"} element={<Profile user={user} />} />
 					<Route exact path={"/messages"} element={<Messages user={user} />} />
 				</Routes>
 			</div>

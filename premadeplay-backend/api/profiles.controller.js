@@ -2,13 +2,16 @@ import ProfilesDAO from "../dao/profilesDAO.js";
 
 export default class PrtofilesController {
     // create the new profile with user name, user id, data, create date.
-    static async apiPostReview(req, res, next) {
+    static async apiPostProfile(req, res, next) {
         try {
             const userInfo = {
                 name: req.body.name,
                 _id: req.body.user_id,
-                rank: req.body.rank,
-                role: req.body.role,
+                solo_rank: req.body.solo_rank,
+                flex_rank: req.body.flex_rank,
+                tft_rank: req.body.tft_rank,
+                primary_role: req.body.primary_role,
+                secondary_role: req.body.secondary_role,
                 server: req.body.server,
                 language: req.body.language
             }
@@ -33,13 +36,16 @@ export default class PrtofilesController {
         }
     }
     // Update the profile with userID, their data and update date.
-    static async apiUpdateReview(req, res, next) {
+    static async apiUpdateProfile(req, res, next) {
         try {
             const userInfo = {
                 name: req.body.name,
                 _id: req.body.user_id,
-                rank: req.body.rank,
-                role: req.body.role,
+                solo_rank: req.body.solo_rank,
+                flex_rank: req.body.flex_rank,
+                tft_rank: req.body.tft_rank,
+                primary_role: req.body.primary_role,
+                secondary_role: req.body.secondary_role,
                 server: req.body.server,
                 language: req.body.language
             }
@@ -62,10 +68,10 @@ export default class PrtofilesController {
     }
 
     // use user_id to delete profile => everyone have unique id(email).
-    static async apiDeleteReview(req, res, next) {
+    static async apiDeleteProfile(req, res, next) {
         try {
             const userID = req.body.user_id;
-            const reviewResponse = await ProfilesDAO.deleteReview(
+            const reviewResponse = await ProfilesDAO.deleteProfile(
                 userID
             );
 

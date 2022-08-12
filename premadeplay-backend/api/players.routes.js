@@ -12,9 +12,9 @@ router.route("/role").get(PlayersController.apiGetRole);
 router.route("/server").get(PlayersController.apiGetServer);
 router.route("/language").get(PlayersController.apiGetLanguage);
 
-router.route("/profiles").post(ProfilesController.apiPostReview)
-                         .put(ProfilesController.apiUpdateReview)
-                         .delete(ProfilesController.apiDeleteReview);
+router.route("/profiles").post(ProfilesController.apiPostProfile)
+                         .put(ProfilesController.apiUpdateProfile)
+                         .delete(ProfilesController.apiDeleteProfile);
 
 router.route("/messages").get(MessageController.apiGetMessages)
                          .post(MessageController.apiPostMessage);
