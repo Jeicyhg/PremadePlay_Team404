@@ -24,8 +24,9 @@ export default class PlayersDAO {
         playersPerPage = 20,
     } = {}) { // empty object is default parameter in case arg is undefined
         let queryText = {};
-        let queryRank = {};
-        let queryRole = {};
+        let querySoloRank = {};
+        let queryFlexRank = {};
+        let queryTftRank = {};
         let queryServer = {};
         let queryLanguage = {};
         console.log(filters);
@@ -33,8 +34,14 @@ export default class PlayersDAO {
             if("title" in filters) {
                 queryText = { $text: { $search:filters['title']}};                
             }
-            if("rank" in filters) {
-                queryRank = {"rank": {$eq: filters['rank']}}
+            if("solo_rank" in filters) {
+                querySoloRank = {"solo_rank": {$eq: filters['solo_rank']}}
+            }
+            if("flex_rank" in filters) {
+                queryFlexRank = {"flex_rank": {$eq: filters['flex_rank']}}
+            }
+            if("tft_rank" in filters) {
+                queryTftRank = {"tft_rank": {$eq: filters['tft_rank']}}
             }
             if("role" in filters) {
                 queryRole = {"role": {$eq: filters['role']}}
@@ -47,7 +54,7 @@ export default class PlayersDAO {
             }
         }
         //assgin all object together
-        let query = Object.assign(queryText, queryRank, queryRole, queryServer, queryLanguage);
+        let query = Object.assign(queryText, querySoloRank, queryFlexRank, queryTftRank, queryRole, queryServer, queryLanguage);
         // empty object will return all of profiles
         let cursor;
         try {

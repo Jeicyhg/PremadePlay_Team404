@@ -18,6 +18,7 @@ const HomePage = ({ user }) => {
         role: "",
         server: "",
         language: "",
+		profile_pic: "",
 		date: ""
     });
 
@@ -41,7 +42,7 @@ const HomePage = ({ user }) => {
 						<div>
 						<Image
 							className="bigPicture"
-							src={profile.poster+"/100px250" }
+							src={"/images/photoes/" + profile.profile_pic+".jpeg" }
 							onError={({currentTarget}) => {
 								currentTarget.onError = null;
 								currentTarget.src="/images/photoes/0.jpeg";

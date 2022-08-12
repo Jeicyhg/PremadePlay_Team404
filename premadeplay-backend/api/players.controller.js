@@ -7,8 +7,14 @@ export default class PlayersController {
         const page = req.query.page ? parseInt(req.query.page) : 0;
 
         let filters = {}
-        if(req.query.rank) {
-            filters.rank = req.query.rank;
+        if(req.query.solo_rank) {
+            filters.solo_rank = req.query.solo_rank;
+        } 
+        if(req.query.flex_rank) {
+            filters.flex_rank = req.query.flex_rank;
+        } 
+        if(req.query.tft_rank) {
+            filters.tft_rank = req.query.tft_rank;
         } 
         if(req.query.role) {
             filters.role = req.query.role;

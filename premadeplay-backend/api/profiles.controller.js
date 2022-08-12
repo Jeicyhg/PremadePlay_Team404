@@ -13,7 +13,8 @@ export default class PrtofilesController {
                 primary_role: req.body.primary_role,
                 secondary_role: req.body.secondary_role,
                 server: req.body.server,
-                language: req.body.language
+                language: req.body.language,
+                profile_pic: req.body.profile_pic,
             }
 
             const date = new Date();
@@ -47,7 +48,8 @@ export default class PrtofilesController {
                 primary_role: req.body.primary_role,
                 secondary_role: req.body.secondary_role,
                 server: req.body.server,
-                language: req.body.language
+                language: req.body.language,
+                profile_pic: req.body.profile_pic,
             }
             const date = new Date();
 

@@ -28,6 +28,7 @@ export default class ProfilesDAO {
                 secondary_role: user.secondary_role,
                 server: user.server,
                 language: user.language,
+                profile_pic: user.profile_pic,
                 date: date,
             }
             return await profiles.insertOne(reviewDoc);
@@ -50,6 +51,7 @@ export default class ProfilesDAO {
                 secondary_role: user.secondary_role,
                 server: user.server,
                 language: user.language,
+                profile_pic: user.profile_pic,
                 date: date,
             }
             console.log(newReviewDoc);
