@@ -52,7 +52,7 @@ HomePage, Personal Profile, Public User Profile, Messages
 
 #### Profile:
 
-<img src="./screenshots/iter2-profile" width="85%" height="85%" />
+<img src="./screenshots/iter2-profile.png" width="85%" height="85%" />
 
 #### Home when logged in with cards generated from backend:
 
