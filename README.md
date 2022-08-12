@@ -15,6 +15,89 @@ Profile, Friends, Messages
 HomePage, Personal Profile, Public User Profile, Messages
 --------
 
+## ITERATION 2:
+
+ <strong>Backend Heroku deployment: </strong> https://premade-backend.herokuapp.com/api/v1/players/
+
+ <strong>Frontend Heroku deployment: </strong> https://premade-play.herokuapp.com/
+
+#### Shared Contributions:
+
+* Collaborated on updated data structure
+* Code review, updates, and edits
+
+#### Brian Contribution:
+
+* Setup MongoDb online database and added players dummy data
+* Updated backend data format and querying to better suit search functions in frontend
+* Created individual player profile page
+* Deployed backend to heroku and linked to MongoDb in Config Vars
+* Debugged backend and frontend linking
+
+#### Jeicy Contribution:
+
+* Created player list of all players with multiple pages
+* Implemented search functionality with multiple search criteria
+* Updated players controller to better suit new data fetching
+* Updated deployed frontend and linked to backend in Config Vars
+* Debugged backend and frontend linking
+
+#### Challenges:
+
+* Matching backend data to frontend data and finding dummy data issues and fixes
+* Props vs params figuring out the best use for each in our code
+* Further refining combined code and finishing up the frontend
+
+### Frontend Homepage:
+
+#### Profile:
+
+<img src="./screenshots/iter2-profile" width="85%" height="85%" />
+
+#### Home when logged in with cards generated from backend:
+
+<img src="./screenshots/iter2-home_search.png" width="85%" height="85%" />
+
+## ITERATION 1:
+
+ <strong>Working Heroku deployment: </strong> https://premade-play.herokuapp.com/
+
+#### Shared Contributions:
+
+* Designed the database and shape of data
+* Created a workplan and divided tasks
+
+#### Brian Contribution: Backend:
+
+* Setup github repo
+* Started implementing backend
+* Starter code for get player data and message date from MangoDB
+* Developed mutifilter function at backend.
+
+#### Jeicy Contribution: Frontend:
+
+* Shaped github folder structure
+* Started implementing frontend
+* Starter code for login and logged out, webapp functions, and pages
+* Deployed the frontend to heroku
+
+#### Challenges:
+
+* Getting backend and frontend to run and build on each other's devices
+* Putting the backend in communication with the front end
+* Further refining and combining code
+
+### Frontend Homepage:
+
+#### When logged in:
+
+<img src="./screenshots/iter1-home-loggedout.png" width="85%" height="85%" />
+
+#### When logged out:
+
+<img src="./screenshots/iter1-home-loggedin.png" width="85%" height="85%" />
+---------------
+
 ## ITERATION 1:
 
  <strong>Working Heroku deployment: </strong> https://premade-play.herokuapp.com/
