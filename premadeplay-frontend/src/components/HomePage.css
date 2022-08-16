@@ -1,0 +1,19 @@
+.carousel {
+	margin-top: 15px;
+	margin-bottom: 40px;
+}
+.Carousel-Image {
+	height: 60% !important;
+	width: auto;
+	object-fit: contain;
+	filter: brightness(70%);
+}
+
+.carousel-caption {
+	text-shadow: 0 0 3px #ffe600, 0 0 5px #0000ff;
+}
+
+.break-line {
+	border: 2px solid rgba(1, 0, 73, 0.514);
+	border-radius: 2px;
+}
