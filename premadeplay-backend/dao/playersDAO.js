@@ -27,12 +27,13 @@ export default class PlayersDAO {
         let querySoloRank = {};
         let queryFlexRank = {};
         let queryTftRank = {};
+        let queryRole = {};
         let queryServer = {};
         let queryLanguage = {};
         console.log(filters);
         if(filters) {
-            if("title" in filters) {
-                queryText = { $text: { $search:filters['title']}};                
+            if("name" in filters) {
+                queryText = { "name": { $eq:filters['name']}};                
             }
             if("solo_rank" in filters) {
                 querySoloRank = {"solo_rank": {$eq: filters['solo_rank']}}

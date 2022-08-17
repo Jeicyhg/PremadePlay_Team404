@@ -25,8 +25,9 @@ export default class PlayersController {
         if(req.query.language) {
             filters.langeuage = req.query.language;
         }
-        if (req.query.title) {
-            filters.title = req.query.title;
+        //**
+        if (req.query.name) {
+            filters.name = req.query.name;
         }
 
         const { playersList, totalNumPlayers} = await
