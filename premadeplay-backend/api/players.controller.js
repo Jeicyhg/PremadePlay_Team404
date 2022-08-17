@@ -1,7 +1,6 @@
 import PlayersDAO from "../dao/playersDAO.js";
 export default class PlayersController {
 	static async apiGetPlayers(req, res, next) {
-		console.log(req.query);
 		const playersPerPage = req.query.moviesPerPage
 			? parseInt(req.query.moviesPerPage)
 			: 20;
@@ -18,7 +17,7 @@ export default class PlayersController {
 			filters.tft_rank = req.query.tft_rank;
 		}
 		if (req.query.role) {
-			filters.role = req.query.role;
+			filters.primary_role = req.query.role;
 		}
 		if (req.query.server) {
 			filters.server = req.query.server;
