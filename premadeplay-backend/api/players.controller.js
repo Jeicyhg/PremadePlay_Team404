@@ -1,6 +1,7 @@
 import PlayersDAO from "../dao/playersDAO.js";
 export default class PlayersController {
 	static async apiGetPlayers(req, res, next) {
+		console.log(req.query);
 		const playersPerPage = req.query.moviesPerPage
 			? parseInt(req.query.moviesPerPage)
 			: 20;
@@ -23,7 +24,7 @@ export default class PlayersController {
 			filters.server = req.query.server;
 		}
 		if (req.query.language) {
-			filters.langeuage = req.query.language;
+			filters.language = req.query.language;
 		}
 		if (req.query.title) {
 			filters.title = req.query.title;

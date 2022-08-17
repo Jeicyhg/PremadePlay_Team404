@@ -45,7 +45,7 @@ export default class PlayersDAO {
 				queryTftRank = { tft_rank: { $eq: filters["tft_rank"] } };
 			}
 			if ("role" in filters) {
-				queryRole = { role: { $eq: filters["role"] } };
+				queryRole = { role: { $eq: filters["primary_role"] } };
 			}
 			if ("server" in filters) {
 				queryServer = { server: { $eq: filters["server"] } };

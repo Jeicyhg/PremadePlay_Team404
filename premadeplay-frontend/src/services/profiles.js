@@ -5,10 +5,13 @@ class ProfilesDataService {
 		return axios.get(`${process.env.REACT_APP_API_BASE_URL}/?page=${page}`);
 	}
 
-	find(query) {
-		return axios.get(`${process.env.REACT_APP_API_BASE_URL}`, {
-			params: { query },
-		});
+	find(queryObject, page = 0) {
+		var queryString = Object.keys(queryObject)
+			.map((key) => key + "=" + queryObject[key])
+			.join("&");
+		return axios.get(
+			`${process.env.REACT_APP_API_BASE_URL}/?page=${page}&` + queryString
+		);
 	}
 
 	getProfile(userId) {
@@ -32,8 +35,16 @@ class ProfilesDataService {
 		);
 	}
 
-	getRanks() {
-		return axios.get(`${process.env.REACT_APP_API_BASE_URL}/rank`);
+	getRanksSolo() {
+		return axios.get(`${process.env.REACT_APP_API_BASE_URL}/rank_solo`);
+	}
+
+	getRanksFlex() {
+		return axios.get(`${process.env.REACT_APP_API_BASE_URL}/rank_flex`);
+	}
+
+	getRanksTft() {
+		return axios.get(`${process.env.REACT_APP_API_BASE_URL}/rank_tft`);
 	}
 
 	getRoles() {
