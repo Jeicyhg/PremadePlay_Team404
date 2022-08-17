@@ -114,35 +114,35 @@ export default class PlayersDAO {
 	}
 
 	static async getRole() {
-		let rank = [];
+		let role = [];
 		try {
-			rank = await players.distinct("role");
-			return rank;
+			role = await players.distinct("primary_role");
+			return role;
 		} catch (e) {
 			console.error(`Unable to get role, ${e}`);
-			return rank;
+			return role;
 		}
 	}
 
 	static async getServer() {
-		let rank = [];
+		let server = [];
 		try {
-			rank = await players.distinct("server");
-			return rank;
+			server = await players.distinct("server");
+			return server;
 		} catch (e) {
 			console.error(`Unable to get server, ${e}`);
-			return rank;
+			return server;
 		}
 	}
 
 	static async getLanguage() {
-		let rank = [];
+		let language = [];
 		try {
-			rank = await players.distinct("language");
-			return rank;
+			language = await players.distinct("language");
+			return language;
 		} catch (e) {
 			console.error(`Unable to get language, ${e}`);
-			return rank;
+			return language;
 		}
 	}
 
