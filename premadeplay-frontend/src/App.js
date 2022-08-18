@@ -12,7 +12,6 @@ import Login from "./components/Login";
 import Logout from "./components/Logout";
 import HomePage from "./components/HomePage";
 import Profile from "./components/Profile";
-import Messages from "./components/Messages";
 import Registration from "./components/Registration";
 import PersonalProfile from "./components/PersonalProfile";
 import ProfilesDataService from "./services/profiles";
@@ -52,25 +51,23 @@ function App() {
 	const retrieveUserProfile = useCallback(() => {
 		const getProfile = (id) => {
 			ProfilesDataService.getProfileByUserId(id).then((response) => {
-                response.data.players.forEach((player) => {
-                    if(player.user_id === id) {
+				response.data.players.forEach((player) => {
+					if (player.user_id === id) {
 						setProfile(player);
 						navigate("/home");
-                    }
-                })
+					}
+				});
 			});
 		};
 		getProfile(user.email);
 		navigate("/registration");
-		
 	}, [user]);
 
 	useEffect(() => {
-		if(user) {
+		if (user) {
 			retrieveUserProfile();
 		}
-	  }, [user, retrieveUserProfile]);
-
+	}, [user, retrieveUserProfile]);
 
 	return (
 		<GoogleOAuthProvider clientId={ourClientId}>
@@ -95,11 +92,6 @@ function App() {
 										Profile
 									</Nav.Link>
 								)}
-								{user && (
-									<Nav.Link as={Link} to={"/messages"}>
-										Messages
-									</Nav.Link>
-								)}
 							</Nav>
 						</Navbar.Collapse>
 						{user ? <Logout setUser={setUser} /> : <Login setUser={setUser} />}
@@ -122,9 +114,16 @@ function App() {
 						element={<Profile user={user} />}
 					/>
 					<Route exact path={"/profile"} element={<Profile user={user} />} />
-					<Route exact path={"/messages"} element={<Messages user={user} />} />
-					<Route exact path={"/registration"} element={<Registration user={user} />} />
-					<Route exact path={"/personalProfile"} element={<PersonalProfile user={user} />} />
+					<Route
+						exact
+						path={"/registration"}
+						element={<Registration user={user} />}
+					/>
+					<Route
+						exact
+						path={"/personalProfile"}
+						element={<PersonalProfile user={user} />}
+					/>
 				</Routes>
 			</div>
 		</GoogleOAuthProvider>

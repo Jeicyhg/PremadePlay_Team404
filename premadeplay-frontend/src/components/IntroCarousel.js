@@ -6,7 +6,7 @@ const IntroCarousel = () => {
 			<Carousel.Item>
 				<img
 					className="d-block w-100 Carousel-Image"
-					src="..\images\slides\sign-up.jpg"
+					src="/images/slides_photo/sign-up.jpg"
 					alt="Sign up slide"
 				/>
 				<Carousel.Caption>
@@ -20,7 +20,7 @@ const IntroCarousel = () => {
 			<Carousel.Item>
 				<img
 					className="d-block w-100 Carousel-Image"
-					src="..\images\slides\search.jpg"
+					src="/images/slides_photo/search.png"
 					alt="Search Slide"
 				/>
 				<Carousel.Caption>
@@ -34,13 +34,13 @@ const IntroCarousel = () => {
 			<Carousel.Item>
 				<img
 					className="d-block w-100 Carousel-Image"
-					src="..\images\slides\play.jpg"
-					alt="Message and play slide"
+					src="/images/slides_photo/play.jpg"
+					alt="Connect and play slide"
 				/>
 				<Carousel.Caption>
 					<h3>Connect and play</h3>
 					<p>
-						Message and make friends with players across our community and get
+						Connect and make friends with players across our community and get
 						ready to play and rank up
 					</p>
 				</Carousel.Caption>
