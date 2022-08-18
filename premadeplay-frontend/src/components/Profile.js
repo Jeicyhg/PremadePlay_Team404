@@ -60,15 +60,6 @@ const HomePage = ({ user }) => {
 						<Col>
 							<div>
 								<Button
-									className="friend button"
-									variant="link"
-									onClick="history.back()"
-								>
-									Add Friend
-								</Button>
-							</div>
-							<div>
-								<Button
 									className="message button"
 									variant="link"
 									onClick="history.back()"

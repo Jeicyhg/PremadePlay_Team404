@@ -101,7 +101,7 @@ const Registration = ({user}) => {
                 </div>
                 <div class="col-md-4 mb-3">
                     <label for="validationCustom01">User Name</label>
-                    <input type="text" class="form-control" id="userName" value= {name} placeholder="User Name"  required/>
+                    <input type="text" class="form-control" id="userName" placeholder="User Name"  required/>
                 </div>
                 <div class="col-md-4 mb-3">
                     <label for="validationCustom02">Server</label>
