@@ -31,16 +31,17 @@ const HomePage = ({ user }) => {
                 })
 			});
 		};
-
+        if(user){
 		getProfile(user.email);
-        console.log(profile);
+        }
 	}, [user]);
 
 	// TODO: implement edit profile when user is in their own profile
     return (
         <div className="App">
+            {user? (
         <Container className="main-container">
-            <Row className="section1">
+            (<Row className="section1">
                 <Col className="section1Col1">
                     <div>
                         <Image
@@ -189,7 +190,11 @@ const HomePage = ({ user }) => {
                     </Link>
                 </div>
             </Row>
-        </Container>
+        </Container>) : (
+            <div>
+            Login to see your profile!!
+            </div>
+        )}
     </div>
     )
 };
