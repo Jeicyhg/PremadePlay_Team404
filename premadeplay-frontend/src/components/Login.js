@@ -13,6 +13,7 @@ function Login({ setUser }) {
 		setUser(loginData);
 		localStorage.setItem("login", JSON.stringify(loginData));
 		console.log("Login successful", res);
+		
 	};
 
 	const onFailure = (res) => {

@@ -16,13 +16,18 @@ class ProfilesDataService {
 			`${process.env.REACT_APP_API_BASE_URL}/profiles/id/${userId}`
 		);
 	}
+	getProfileByUserId(userId) {
+		return axios.get(
+			`${process.env.REACT_APP_API_BASE_URL}?${"user_id"}=${userId}`
+		);
+	}
 
 	setNewProfile(data) {
-		return axios.put(`${process.env.REACT_APP_API_BASE_URL}/profiles`, data);
+		return axios.post(`${process.env.REACT_APP_API_BASE_URL}/profiles`, data);
 	}
 
 	updateProfile(data) {
-		return axios.post(`${process.env.REACT_APP_API_BASE_URL}/profiles`, data);
+		return axios.put(`${process.env.REACT_APP_API_BASE_URL}/profiles`, data);
 	}
 
 	deleteProfile(userId) {

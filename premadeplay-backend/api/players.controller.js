@@ -5,7 +5,7 @@ export default class PlayersController {
         const playersPerPage = req.query.moviesPerPage ?
           parseInt(req.query.moviesPerPage) : 20;
         const page = req.query.page ? parseInt(req.query.page) : 0;
-
+        console.log(req.query);
         let filters = {}
         if(req.query.solo_rank) {
             filters.solo_rank = req.query.solo_rank;
@@ -25,11 +25,10 @@ export default class PlayersController {
         if(req.query.language) {
             filters.langeuage = req.query.language;
         }
-        //**
         if (req.query.name) {
             filters.name = req.query.name;
         }
-
+        console.log(filters);
         const { playersList, totalNumPlayers} = await
             PlayersDAO.getPlayers({filters, page, playersPerPage});
 
@@ -47,6 +46,21 @@ export default class PlayersController {
         try {
             let id = req.params.id || {}
             let player = await PlayersDAO.getPlayerById(id);
+            if(!player) {
+                res.status(404).json({error: "not found"});
+                return;
+            }
+            res.json(player);
+        } catch(e) {
+            console.log(`API, ${e}`);
+            res.status(500).json({error: e});
+        }
+    }
+
+    static async apiGetPlayerByUserId(req, res, next) {
+        try {
+            let id = req.params.id || {}
+            let player = await PlayersDAO.getPlayerByUserId(id);
             if(!player) {
                 res.status(404).json({error: "not found"});
                 return;

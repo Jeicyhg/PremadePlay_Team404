@@ -1,0 +1,83 @@
+.section1Col2 {
+    position: relative;
+    right: 350px;
+    color: white;
+}
+
+.section1Col1 {
+    position: relative;
+    width: 10%;
+    
+    
+}
+
+.section1 {
+    background-color: black;
+    border: 3px solid black;
+    height: 250px;
+    padding: bottom 100px;
+    color: white;
+}
+
+.bigPicture {
+    position: relative;
+    display: flex;
+    width: 138px;
+}
+
+.seperator {
+    position: relative;
+    border: 3px solid gray;
+    left: 80px;
+    height:5px;
+    width: 1150px;
+}
+
+.role {
+    position: relative;
+    width: 100px;
+}
+
+.rank {
+    position: relative;
+    width: 100px;
+}
+
+.button {
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    width: 150px;
+    height: 55px;
+  }
+
+.return {
+    background-color: #f44336;
+    top: 150px;
+    left: 1000px;
+    position: relative;
+}
+
+.friend {
+    background-color: #008cff;
+    top: 150px;
+    right: 130px;
+    position: relative;
+}
+
+.message {
+    background-color: #008cff;
+    top: 97px;
+    left: 40px;
+    position: relative;
+}
+
+.edit {
+    background-color: #008cff;
+    bottom: 800px;
+    left: 400px;
+    position: relative;
+}

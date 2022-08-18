@@ -137,4 +137,16 @@ export default class PlayersDAO {
             throw e;
         }
     }
+
+    static async getPlayerByUserId(id) {
+        let cursor;
+        try {
+            console.log(id);
+            console.log(players);
+            cursor = await players.find(({ user_id }) => user_id == id);
+        } catch(e) {
+            console.error(`Unable to issue find command, ${e}`);
+            throw e;
+        }
+    }
 }

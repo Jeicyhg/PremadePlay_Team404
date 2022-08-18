@@ -7,6 +7,7 @@ const router = express.Router(); // get access to express router
 
 router.route("/").get(PlayersController.apiGetPlayers);
 router.route("/id/:id").get(PlayersController.apiGetPlayerById);
+router.route("/userId/:id").get(PlayersController.apiGetPlayerByUserId);
 router.route("/rank").get(PlayersController.apiGetRank);
 router.route("/role").get(PlayersController.apiGetRole);
 router.route("/server").get(PlayersController.apiGetServer);

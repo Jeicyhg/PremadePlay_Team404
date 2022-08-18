@@ -1,21 +1,25 @@
 import "./App.css";
 import { Routes, Route, Link } from "react-router-dom";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 import { GoogleOAuthProvider } from "@react-oauth/google";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
+import { useNavigate } from "react-router-dom";
 
 import Login from "./components/Login";
 import Logout from "./components/Logout";
 import HomePage from "./components/HomePage";
 import Profile from "./components/Profile";
 import Messages from "./components/Messages";
-
+import Registration from "./components/Registration";
+import PersonalProfile from "./components/PersonalProfile";
+import ProfilesDataService from "./services/profiles";
 const ourClientId = process.env.REACT_APP_GOOGLE_CLIENT_ID;
 
 function App() {
+	const navigate = useNavigate();
 	const [user, setUser] = useState(null);
 	const [userProfileComplete, setUserProfileComplete] = useState(false);
 
@@ -34,14 +38,21 @@ function App() {
 		}
 	}, []);
 
+	const retrieveUserProfile = useCallback(() => {
+		ProfilesDataService.getProfile(user.email)
+		.then(response => {
+			navigate("/home");
+		})
+		.catch(e=> {
+			navigate("/registration");
+			console.log(e);
+		})
+	}, [user]);
 	useEffect(() => {
-		let fetchedUserData = null;
-		// TODO: get logged in user data from backend
-		if (!(fetchedUserData === undefined || fetchedUserData === null)) {
-			setUserProfileComplete(true);
+		if(user) {
+			retrieveUserProfile();
 		}
-	}, []);
-
+	  }, [user, retrieveUserProfile]);
 	return (
 		<GoogleOAuthProvider clientId={ourClientId}>
 			<div className="App">
@@ -61,7 +72,7 @@ function App() {
 									Home
 								</Nav.Link>
 								{user && (
-									<Nav.Link as={Link} to={"/profile"}>
+									<Nav.Link as={Link} to={"/PersonalProfile"}>
 										Profile
 									</Nav.Link>
 								)}
@@ -93,6 +104,8 @@ function App() {
 					/>
 					<Route exact path={"/profile"} element={<Profile user={user} />} />
 					<Route exact path={"/messages"} element={<Messages user={user} />} />
+					<Route exact path={"/registration"} element={<Registration user={user} />} />
+					<Route exact path={"/personalProfile"} element={<PersonalProfile user={user} />} />
 				</Routes>
 			</div>
 		</GoogleOAuthProvider>
