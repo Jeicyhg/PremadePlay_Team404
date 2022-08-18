@@ -13,6 +13,7 @@ import "./PlayerList.css";
 const PlayerList = ({ user }) => {
 	// useState to set players in page
 	const [players, setPlayers] = useState([]);
+	const user_email = user.email;
 
 	// search criteria to use for filtered search
 	const [searchUsername, setSearchUsername] = useState("");
@@ -144,13 +145,12 @@ const PlayerList = ({ user }) => {
 			try {
 				let response = (await ProfilesDataService.getAll(0)).data;
 				response.players.forEach((player, index) => {
-                    if(player.user_id === user.email) {
+					if (player.user_id === user_email) {
 						response.players.splice(index, 1);
-                    }
-                })
+					}
+				});
 				fetchedPlayers = response.players;
 				totalPlayers = response.total_results;
-				
 			} catch (error) {
 				console.log(error);
 				fetchedPlayers = [];
@@ -218,8 +218,12 @@ const PlayerList = ({ user }) => {
 				searchCriteria,
 				currentPage
 			);
-			console.log(response);
 			fetchedPlayers = response.data.players;
+			fetchedPlayers.forEach((player, index) => {
+				if (player.user_id === user_email) {
+					fetchedPlayers.splice(index, 1);
+				}
+			});
 			totalPlayers = response.data.total_results;
 		} catch (error) {
 			console.log(error);
@@ -238,6 +242,7 @@ const PlayerList = ({ user }) => {
 		searchRole,
 		searchServer,
 		searchUsername,
+		user_email,
 	]);
 
 	const startFilteredSearch = (e) => {
@@ -441,31 +446,34 @@ const PlayerList = ({ user }) => {
 					{players.map((player) => {
 						return (
 							<Col key={player._id}>
-								{ user && user.email !== player.user_id &&
-								<Card className="playersListCard">
-									<Card.Img
-										className="smallPoster playerCardImg"
-										src={"/images/photoes/" + player.profile_pic + ".jpeg"}
-										onError={({ currentTarget }) => {
-											currentTarget.onError = null;
-											currentTarget.src = "/images/photoes/0.jpeg";
-										}}
-									/>
-									<Card.Body>
-										<Card.Title>{player.name}</Card.Title>
-										<Card.Subtitle>
-											Role: <br />{" "}
-											{player.primary_role ? player.primary_role : "Unknown"}
-										</Card.Subtitle>
-										<Link to={"/profile/" + player._id}>
-											<Button className="cardButton" variant="outline-warning">
-												View Full Profile
-											</Button>
-										</Link>
-									</Card.Body>
-								</Card>}
+								{user && user.email !== player.user_id && (
+									<Card className="playersListCard">
+										<Card.Img
+											className="smallPoster playerCardImg"
+											src={"/images/photoes/" + player.profile_pic + ".jpeg"}
+											onError={({ currentTarget }) => {
+												currentTarget.onError = null;
+												currentTarget.src = "/images/photoes/0.jpeg";
+											}}
+										/>
+										<Card.Body>
+											<Card.Title>{player.name}</Card.Title>
+											<Card.Subtitle>
+												Role: <br />{" "}
+												{player.primary_role ? player.primary_role : "Unknown"}
+											</Card.Subtitle>
+											<Link to={"/profile/" + player._id}>
+												<Button
+													className="cardButton"
+													variant="outline-warning"
+												>
+													View Full Profile
+												</Button>
+											</Link>
+										</Card.Body>
+									</Card>
+								)}
 							</Col>
-							
 						);
 					})}
 				</Row>
