@@ -143,8 +143,14 @@ const PlayerList = ({ user }) => {
 			var totalPlayers = 0;
 			try {
 				let response = (await ProfilesDataService.getAll(0)).data;
+				response.players.forEach((player, index) => {
+                    if(player.user_id === user.email) {
+						response.players.splice(index, 1);
+                    }
+                })
 				fetchedPlayers = response.players;
 				totalPlayers = response.total_results;
+				
 			} catch (error) {
 				console.log(error);
 				fetchedPlayers = [];
