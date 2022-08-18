@@ -33,7 +33,7 @@ HomePage, Personal Profile, Public User Profile, Messages
 * Debugged backend and frontend linking
 
 #### Jeicy Contribution:
-* Created the slice page
+* Created the home page carousel
 * Created the player card on the player list
 * Updating player list of all players with multiple pages
 * Updated deployed frontend and linked to backend in Config Vars
