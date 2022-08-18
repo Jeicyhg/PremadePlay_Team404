@@ -32,7 +32,7 @@ const HomePage = ({ user }) => {
 			});
 		};
 
-		getProfile("fasd9090@gmail.com");
+		getProfile(user.email);
         console.log(profile);
 	}, [user]);
 

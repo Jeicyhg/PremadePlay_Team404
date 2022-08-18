@@ -32,8 +32,8 @@ export default class PlayersDAO {
 		let queryLanguage = {};
 
 		if (filters) {
-			if ("title" in filters) {
-				queryText = { $text: { $search: filters["title"] } };
+			if ("name" in filters) {
+				queryText = { $text: { $search: filters["name"] } };
 			}
 			if ("solo_rank" in filters) {
 				querySoloRank = { solo_rank: { $eq: filters["solo_rank"] } };
