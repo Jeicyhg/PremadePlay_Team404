@@ -38,6 +38,8 @@
 	background-color: rgba(68, 214, 250, 0.63);
 	transition: background-color 0.5s;
 	cursor: pointer;
+    left: 40px;
+	text-align: center;
 }
 
 .cardButton:hover {

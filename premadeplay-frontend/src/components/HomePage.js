@@ -18,13 +18,12 @@ const HomePage = ({ user, setUser }) => {
 								<br />
 								Search below for a new teammate
 							</p>
-							<PlayerList />
+							<PlayerList user={user} />
 						</div>
 					) : (
 						<div>
 							<IntroCarousel />
 							<hr className="break-line" />
-							<PlayerList />
 						</div>
 					)}
 				</div>

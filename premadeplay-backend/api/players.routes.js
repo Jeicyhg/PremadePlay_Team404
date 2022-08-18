@@ -7,7 +7,6 @@ const router = express.Router(); // get access to express router
 
 router.route("/").get(PlayersController.apiGetPlayers);
 router.route("/id/:id").get(PlayersController.apiGetPlayerById);
-router.route("/userId/:id").get(PlayersController.apiGetPlayerByUserId);
 router.route("/rank_solo").get(PlayersController.apiGetRankSolo);
 router.route("/rank_flex").get(PlayersController.apiGetRankFlex);
 router.route("/rank_tft").get(PlayersController.apiGetRankTft);

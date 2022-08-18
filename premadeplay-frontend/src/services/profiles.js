@@ -16,7 +16,7 @@ class ProfilesDataService {
 
 	getProfile(userId) {
 		return axios.get(
-			`${process.env.REACT_APP_API_BASE_URL}/profiles/id/${userId}`
+			`${process.env.REACT_APP_API_BASE_URL}/id/${userId}`
 		);
 	}
 	getProfileByUserId(userId) {

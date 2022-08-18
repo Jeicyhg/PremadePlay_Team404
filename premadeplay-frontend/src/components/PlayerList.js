@@ -435,6 +435,7 @@ const PlayerList = ({ user }) => {
 					{players.map((player) => {
 						return (
 							<Col key={player._id}>
+								{ user && user.email !== player.user_id &&
 								<Card className="playersListCard">
 									<Card.Img
 										className="smallPoster playerCardImg"
@@ -456,8 +457,9 @@ const PlayerList = ({ user }) => {
 											</Button>
 										</Link>
 									</Card.Body>
-								</Card>
+								</Card>}
 							</Col>
+							
 						);
 					})}
 				</Row>

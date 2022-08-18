@@ -38,21 +38,47 @@ function App() {
 		}
 	}, []);
 
+	const [profile, setProfile] = useState({
+		user_id: null,
+		name: "",
+		rank: "",
+		role: "",
+		server: "",
+		language: "",
+		profile_pic: "",
+		date: "",
+	});
+	
 	const retrieveUserProfile = useCallback(() => {
-		ProfilesDataService.getProfile(user.email)
-		.then(response => {
+		const getProfile = (id) => {
+			ProfilesDataService.getProfileByUserId(id).then((response) => {
+                response.data.players.forEach((player) => {
+                    if(player.user_id === id) {
+						setProfile(player);
+                        
+                    }
+                })
+			});
+		};
+		getProfile(user.email);
+		if(profile.user_id) {
+			console.log(profile);
 			navigate("/home");
-		})
-		.catch(e=> {
+			
+		} else {
+			console.log(profile);
 			navigate("/registration");
-			console.log(e);
-		})
+		}
+		
 	}, [user]);
+
 	useEffect(() => {
 		if(user) {
 			retrieveUserProfile();
 		}
 	  }, [user, retrieveUserProfile]);
+
+
 	return (
 		<GoogleOAuthProvider clientId={ourClientId}>
 			<div className="App">
