@@ -15,11 +15,60 @@ Profile, Friends, Messages
 HomePage, Personal Profile, Public User Profile, Messages
 --------
 
-## ITERATION 2:
+## ITERATION 3:
 
  <strong>Backend Heroku deployment: </strong> https://premade-backend.herokuapp.com/api/v1/players/
 
  <strong>Frontend Heroku deployment: </strong> https://premade-play.herokuapp.com/
+
+#### Shared Contributions:
+
+* Collaborated on updated data structure
+* Code review, updates, and edits
+
+#### Brian Contribution:
+* Created the registration page
+* Updating individual player profile page
+* Deployed backend to heroku and linked to MongoDb in Config Vars
+* Debugged backend and frontend linking
+
+#### Jeicy Contribution:
+* Created the slice page
+* Created the player card on the player list
+* Updating player list of all players with multiple pages
+* Updated deployed frontend and linked to backend in Config Vars
+* Debugged backend and frontend linking
+
+#### Challenges:
+
+* Creating the better layout of player card at the frontend
+* Fetching the user input data for storing and matching
+* Further refining combined code and finishing up the frontend
+
+### Frontend Homepage:
+#### Home slide when having login:
+
+<img src="./screenshots/iter3-home_slide.png" width="85%" height="85%" />
+
+
+#### Home when logged in with cards generated from backend:
+
+<img src="./screenshots/iter3-home_search.png" width="85%" height="85%" />
+
+#### Other player's profile:
+
+<img src="./screenshots/iter3-profile.png" width="85%" height="85%" />
+
+#### Personal profile:
+
+<img src="./screenshots/iter3-personalprofile.png" width="85%" height="85%" />
+
+#### Reginstration:
+
+<img src="./screenshots/iter3-registration.png" width="85%" height="85%" />
+
+
+## ITERATION 2:
 
 #### Shared Contributions:
 
