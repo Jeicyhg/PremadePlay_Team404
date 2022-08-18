@@ -26,9 +26,10 @@ const Registration = ({user}) => {
 		profile_pic: "",
 		date: "",
 	});
-
+    let name = ""
     if(location.state && location.state.currentProfile) {
         editing =true;
+        name = location.state.currentProfile.name;
     }
 	
 
@@ -100,10 +101,7 @@ const Registration = ({user}) => {
                 </div>
                 <div class="col-md-4 mb-3">
                     <label for="validationCustom01">User Name</label>
-                    <input type="text" class="form-control" id="userName" placeholder="User Name"  required/>
-                    <div class="valid-feedback">
-                        Looks good!
-                    </div>
+                    <input type="text" class="form-control" id="userName" value= {name} placeholder="User Name"  required/>
                 </div>
                 <div class="col-md-4 mb-3">
                     <label for="validationCustom02">Server</label>
@@ -196,15 +194,7 @@ const Registration = ({user}) => {
                 </div> 
                 
             </Row>
-            <div class="form-group">
-                <div class="form-check">
-                    <label class="form-check-label" for="invalidCheck">
-                        Agree to terms and conditions
-                    </label>
-                    <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required/>
-                </div>
-            </div>
-            <Button class="btn btn-primary" variant="primary" onClick = {save}>Submit form</Button>
+            <Button className ="btn btn-primary" variant="primary" onClick = {save}>Submit</Button>
         </Form>
     );
 };

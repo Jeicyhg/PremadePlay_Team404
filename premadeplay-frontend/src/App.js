@@ -48,27 +48,20 @@ function App() {
 		profile_pic: "",
 		date: "",
 	});
-	
+	//see if the user's data in our database.
 	const retrieveUserProfile = useCallback(() => {
 		const getProfile = (id) => {
 			ProfilesDataService.getProfileByUserId(id).then((response) => {
                 response.data.players.forEach((player) => {
                     if(player.user_id === id) {
 						setProfile(player);
-                        
+						navigate("/home");
                     }
                 })
 			});
 		};
 		getProfile(user.email);
-		if(profile.user_id) {
-			console.log(profile);
-			navigate("/home");
-			
-		} else {
-			console.log(profile);
-			navigate("/registration");
-		}
+		navigate("/registration");
 		
 	}, [user]);
 
